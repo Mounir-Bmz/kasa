@@ -1,0 +1,172 @@
+.logement {
+    padding: 20px 0;
+
+    .logement-header {
+        display: flex;
+        justify-content: space-between;
+        margin: 30px 0;
+
+        .logement-info {
+            .logement-title {
+                font-family: 'Montserrat', sans-serif;
+                font-weight: 500;
+                font-size: 36px;
+                color: #ff6060;
+                margin-bottom: 10px;
+            }
+
+            .logement-location {
+                font-family: 'Montserrat', sans-serif;
+                font-size: 18px;
+                color: #000000;
+            }
+
+            .logement-tags {
+                display: flex;
+                gap: 10px;
+                margin-top: 20px;
+
+                .tag {
+                    background-color: #ff6060;
+                    color: white;
+                    font-family: 'Montserrat', sans-serif;
+                    font-size: 14px;
+                    padding: 5px 20px;
+                    border-radius: 10px;
+                }
+            }
+        }
+
+        .logement-host-rating {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 20px;
+
+            .logement-host {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+
+                .host-name {
+                    font-family: 'Montserrat', sans-serif;
+                    font-size: 18px;
+                    color: #ff6060;
+                }
+
+                .host-picture {
+                    width: 64px;
+                    height: 64px;
+                    border-radius: 50%;
+                }
+            }
+
+            .logement-rating {
+                .star {
+                    font-size: 24px;
+                    color: #e3e3e3;
+
+                    &.filled {
+                        color: #ff6060;
+                    }
+                }
+            }
+        }
+    }
+
+    .logement-details {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 76px;
+
+        .logement-description,
+        .logement-equipments {
+            h2 {
+                font-family: 'Montserrat', sans-serif;
+                font-size: 18px;
+                color: #ff6060;
+                margin-bottom: 10px;
+            }
+
+            p,
+            li {
+                font-family: 'Montserrat', sans-serif;
+                font-size: 18px;
+                color: #ff6060;
+            }
+
+            ul {
+                list-style: none;
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        .logement-header {
+            flex-direction: column;
+            margin: 15px 0;
+
+            .logement-info {
+                .logement-title {
+                    font-size: 18px;
+                }
+
+                .logement-location {
+                    font-size: 14px;
+                }
+
+                .logement-tags {
+                    gap: 5px;
+                    margin-top: 10px;
+
+                    .tag {
+                        font-size: 10px;
+                        padding: 3px 10px;
+                        border-radius: 5px;
+                    }
+                }
+            }
+
+            .logement-host-rating {
+                flex-direction: row-reverse;
+                justify-content: space-between;
+                align-items: center;
+                margin-top: 10px;
+
+                .logement-host {
+                    .host-name {
+                        font-size: 12px;
+                    }
+
+                    .host-picture {
+                        width: 32px;
+                        height: 32px;
+                    }
+                }
+
+                .logement-rating {
+                    .star {
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+
+        .logement-details {
+            grid-template-columns: 1fr;
+            gap: 20px;
+
+            .logement-description,
+            .logement-equipments {
+                h2 {
+                    font-size: 13px;
+                }
+
+                p,
+                li {
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+}
