@@ -1,6 +1,5 @@
 .collapse {
-    margin-bottom: 30px;
-    position: relative;
+    margin-bottom: 10px;
 
     .collapse-header {
         display: flex;
@@ -12,8 +11,6 @@
         border-radius: 5px;
         cursor: pointer;
         min-height: 47px;
-        position: relative;
-        z-index: 2;
 
         .collapse-title {
             font-family: 'Montserrat', sans-serif;
@@ -34,10 +31,6 @@
     }
 
     .collapse-content {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
         color: black;
         font-family: 'Montserrat', sans-serif;
         font-size: 18px;
@@ -45,15 +38,12 @@
         max-height: 0;
         overflow: hidden;
         opacity: 0;
-        transform: translateY(-100%);
-        transition: max-height 0.5s ease, opacity 0.5s ease, transform 0.5s ease;
-        padding: 20px;
-        z-index: 1;
+        padding: 0 20px;
+        transition: max-height 0.5s ease-out, opacity 0.5s ease-out, padding 0.5s ease-out;
 
         &.open {
             max-height: 500px;
             opacity: 1;
-            transform: translateY(0);
             padding: 20px;
         }
 
@@ -67,7 +57,7 @@
     }
 
     @media (max-width: 768px) {
-        margin-bottom: 20px;
+        margin-bottom: 5px;
 
         .collapse-header {
             padding: 10px 15px;
