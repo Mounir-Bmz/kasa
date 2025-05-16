@@ -1,4 +1,5 @@
 import { useParams, useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 import logements from '../data/logements.json';
 import Gallery from '../components/Gallery';
 import '../styles/Logement.scss';
@@ -8,8 +9,13 @@ function Logement() {
     const navigate = useNavigate();
     const logement = logements.find((logement) => logement.id === id);
 
+    useEffect(() => {
+        if (!logement) {
+            navigate('/404', { replace: true });
+        }
+    }, [logement, navigate]);
+
     if (!logement) {
-        navigate('/404', { replace: true });
         return null;
     }
 
