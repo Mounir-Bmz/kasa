@@ -4,7 +4,7 @@
     height: 223px;
     border-radius: 25px;
     overflow: hidden;
-    margin: 20px 0;
+    margin: 40px 0;
 
     .banner-image {
         width: 100%;
@@ -19,8 +19,24 @@
         left: 50%;
         transform: translate(-50%, -50%);
         color: white;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 500;
         font-size: 48px;
         text-align: center;
         text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    @media (max-width: 768px) {
+        height: 111px;
+        border-radius: 10px;
+        margin: 20px 0;
+
+        .banner-text {
+            font-size: 24px;
+            left: 16px;
+            transform: translateY(-50%);
+            text-align: left;
+            width: 217px;
+        }
     }
 }
