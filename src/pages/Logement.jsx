@@ -1,22 +1,15 @@
-import { useParams, useNavigate } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import logements from '../data/logements.json';
 import Gallery from '../components/Gallery';
+import Error from './Error'; // On importe Error directement
 import '../styles/Logement.scss';
 
 function Logement() {
     const { id } = useParams();
-    const navigate = useNavigate();
     const logement = logements.find((logement) => logement.id === id);
 
-    useEffect(() => {
-        if (!logement) {
-            navigate('/404', { replace: true });
-        }
-    }, [logement, navigate]);
-
     if (!logement) {
-        return null;
+        return <Error />;
     }
 
     return (
