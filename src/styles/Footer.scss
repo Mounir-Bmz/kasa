@@ -1,9 +1,34 @@
 .footer {
-    text-align: center;
-    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
     background-color: #000;
     color: white;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+    width: 100vw;
+    margin-left: calc(-5vw);
+    margin-right: calc(-5vw);
+
+    .footer-logo {
+        width: 122px;
+        height: auto;
+        filter: brightness(0) invert(1);
+        margin-bottom: 20px;
+    }
+
+    p {
+        font-size: 15px;
+    }
+
+    @media (max-width: 768px) {
+        padding: 30px 20px;
+
+        .footer-logo {
+            width: 100px;
+        }
+
+        p {
+            font-size: 12px;
+        }
+    }
 }

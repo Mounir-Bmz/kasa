@@ -3,11 +3,12 @@
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    background-color: #ff6060;
     color: white;
 
-    h1 {
-        font-size: 24px;
+    .header-logo {
+        width: 150px;
+        height: auto;
+        margin: 1rem 2rem;
     }
 
     nav {
@@ -15,12 +16,25 @@
         gap: 20px;
 
         a {
-            color: white;
+            color: rgb(0, 0, 0);
             text-decoration: none;
             font-size: 18px;
 
             &.active {
                 text-decoration: underline;
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        .header-logo {
+            content: url('../assets/images/LOGO_M.png');
+            width: 145px;
+        }
+
+        nav {
+            a {
+                font-size: 12px;
             }
         }
     }
