@@ -1,0 +1,94 @@
+.collapse {
+    margin-bottom: 30px;
+    position: relative;
+
+    .collapse-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #ff6060;
+        color: white;
+        padding: 15px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        min-height: 47px;
+        position: relative;
+        z-index: 2;
+
+        .collapse-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            font-size: 24px;
+        }
+
+        .collapse-arrow {
+            font-size: 24px;
+            font-weight: bold;
+            transform: rotate(-90deg);
+            transition: transform 0.3s ease;
+
+            &.open {
+                transform: rotate(90deg);
+            }
+        }
+    }
+
+    .collapse-content {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        color: black;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 18px;
+        border-radius: 0 0 5px 5px;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transform: translateY(-100%);
+        transition: max-height 0.5s ease, opacity 0.5s ease, transform 0.5s ease;
+        padding: 20px;
+        z-index: 1;
+
+        &.open {
+            max-height: 500px;
+            opacity: 1;
+            transform: translateY(0);
+            padding: 20px;
+        }
+
+        p, li {
+            margin: 0;
+        }
+
+        ul {
+            list-style: none;
+        }
+    }
+
+    @media (max-width: 768px) {
+        margin-bottom: 20px;
+
+        .collapse-header {
+            padding: 10px 15px;
+            border-radius: 5px;
+            min-height: 30px;
+
+            .collapse-title {
+                font-size: 13px;
+            }
+
+            .collapse-arrow {
+                font-size: 16px;
+            }
+        }
+
+        .collapse-content {
+            font-size: 12px;
+
+            &.open {
+                padding: 10px;
+            }
+        }
+    }
+}
