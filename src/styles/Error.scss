@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap');
+
 .error {
     display: flex;
     flex-direction: column;
@@ -7,6 +9,7 @@
     text-align: center;
     padding: 20px;
     color: #ff6060;
+    font-family: 'Montserrat', sans-serif;
 
     .error-title {
         font-size: 288px;

@@ -1,7 +1,8 @@
 import { useParams } from 'react-router-dom';
 import logements from '../data/logements.json';
 import Gallery from '../components/Gallery';
-import Error from './Error'; // On importe Error directement
+import Collapse from '../components/Collapse';
+import Error from './Error';
 import '../styles/Logement.scss';
 
 function Logement() {
@@ -51,18 +52,8 @@ function Logement() {
                 </div>
             </div>
             <div className="logement-details">
-                <div className="logement-description">
-                    <h2>Description</h2>
-                    <p>{logement.description}</p>
-                </div>
-                <div className="logement-equipments">
-                    <h2>Équipements</h2>
-                    <ul>
-                        {logement.equipments.map((equipment, index) => (
-                            <li key={index}>{equipment}</li>
-                        ))}
-                    </ul>
-                </div>
+                <Collapse title="Description" content={logement.description} />
+                <Collapse title="Équipements" content={logement.equipments} />
             </div>
         </div>
     );
